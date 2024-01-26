@@ -1,1 +1,2 @@
-# emottak-payload-xsd
+# emottak payload relaterte xsd-er som Felles Format , MsgHead .......
+
