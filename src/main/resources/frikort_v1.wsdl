@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Frikort_v1Service"
+                  targetNamespace="http://nav.no/tjeneste/ekstern/frikort/v1"
+                  xmlns:tns="http://nav.no/tjeneste/ekstern/frikort/v1"
+                  xmlns:types="http://nav.no/tjeneste/ekstern/frikort/v1/types"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" >
+
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import namespace="http://nav.no/tjeneste/ekstern/frikort/v1/types" schemaLocation="frikort_v1Types.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+
+  <wsdl:message name="frikortsporringRequest">
+    <wsdl:part name="parameters" element="types:frikortsporringRequest" />
+  </wsdl:message>
+
+  <wsdl:message name="frikortsporringResponse">
+    <wsdl:part name="parameters" element="types:frikortsporringResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="frikortsporringMengdeRequest">
+    <wsdl:part name="parameters" element="types:frikortsporringMengdeRequest" />
+  </wsdl:message>
+
+  <wsdl:message name="frikortsporringMengdeResponse">
+    <wsdl:part name="parameters" element="types:frikortsporringMengdeResponse" />
+  </wsdl:message>
+
+  <wsdl:message name="pingRequest">
+    <wsdl:part name="parameters" element="types:pingRequest" />
+  </wsdl:message>
+
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="types:pingResponse" />
+  </wsdl:message>
+
+  <wsdl:portType name="Frikort_v1Port">
+
+    <wsdl:operation name="frikortsporring">
+      <wsdl:input message="tns:frikortsporringRequest" />
+      <wsdl:output message="tns:frikortsporringResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="frikortsporringMengde">
+      <wsdl:input message="tns:frikortsporringMengdeRequest" />
+      <wsdl:output message="tns:frikortsporringMengdeResponse" />
+    </wsdl:operation>
+
+    <wsdl:operation name="ping">
+      <wsdl:input message="tns:pingRequest" />
+      <wsdl:output message="tns:pingResponse" />
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+  <wsdl:binding name="Frikort_v1Binding" type="tns:Frikort_v1Port">
+	<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    
+	<wsdl:operation name="frikortsporring">
+      <soap:operation soapAction="http://nav.no/tjeneste/ekstern/frikort/v1/Frikort_v1Port/frikortsporringRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+	<wsdl:operation name="frikortsporringMengde">
+      <soap:operation soapAction="http://nav.no/tjeneste/ekstern/frikort/v1/Frikort_v1Port/frikortsporringMengdeRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+	<wsdl:operation name="ping">
+      <soap:operation soapAction="http://nav.no/tjeneste/ekstern/frikort/v1/Frikort_v1Port/pingRequest"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+  <wsdl:service name="Frikort_v1Service">
+	<wsdl:port name="Frikort_v1Port" binding="tns:Frikort_v1Binding">
+      <soap:address location="http://localhost:9080/nav-frikort/tjenestereksterne"/>
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>
