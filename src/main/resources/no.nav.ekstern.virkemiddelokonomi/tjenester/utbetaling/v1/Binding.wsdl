@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="Binding" targetNamespace="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1/Binding/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:tns="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1/Binding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:utbetaling="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1">
+  <wsdl:import namespace="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1" location="../utbetaling.wsdl">
+    </wsdl:import>
+  <wsdl:binding name="UtbetalingBinding" type="utbetaling:Utbetaling">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsaw:UsingAddressing/>
+    <wsdl:operation name="finnUtbetalingListe">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ugyldigDato">
+        <soap:fault name="ugyldigDato" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="brukerIkkeFunnet">
+        <soap:fault name="brukerIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigKombinasjonBrukerIdOgBrukertype">
+        <soap:fault name="ugyldigKombinasjonBrukerIdOgBrukertype" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="baksystemIkkeTilgjengelig">
+        <soap:fault name="baksystemIkkeTilgjengelig" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ingenTilgangTilEnEllerFlereYtelser">
+        <soap:fault name="ingenTilgangTilEnEllerFlereYtelser" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="finnBrukersUtbetalteYtelser">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ugyldigDato">
+        <soap:fault name="ugyldigDato" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="brukerIkkeFunnet">
+        <soap:fault name="brukerIkkeFunnet" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ugyldigKombinasjonBrukerIdOgBrukertype">
+        <soap:fault name="ugyldigKombinasjonBrukerIdOgBrukertype" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="baksystemIkkeTilgjengelig">
+        <soap:fault name="baksystemIkkeTilgjengelig" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ingenTilgangTilEnEllerFlereYtelser">
+        <soap:fault name="ingenTilgangTilEnEllerFlereYtelser" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Utbetaling">
+    <wsdl:port name="UtbetalingPort" binding="tns:UtbetalingBinding">
+      <soap:address location="http://localhost:9080/ekstern-virkemiddelokonomi-tjeneste-utbetaling_v1Web/sca/UtbetalingWSEXP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

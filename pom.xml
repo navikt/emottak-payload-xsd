@@ -122,6 +122,9 @@
                                 <wsdlOption>
                                     <wsdl>${basedir}/src/main/resources/frikort_v1.wsdl</wsdl>
                                 </wsdlOption>
+                                <wsdlOption>
+                                    <wsdl>${basedir}/src/main/resources/no.nav.ekstern.virkemiddelokonomi/tjenester/utbetaling/utbetaling.wsdl</wsdl>
+                                </wsdlOption>
                             </wsdlOptions>
                         </configuration>
                         <goals>

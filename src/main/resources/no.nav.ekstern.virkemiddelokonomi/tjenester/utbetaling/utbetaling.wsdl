@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="utbetaling" targetNamespace="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/v1" xmlns:feil="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/feil/v1" xmlns:meldinger="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/meldinger/v1">
+      <xsd:import namespace="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/feil/v1" schemaLocation="feil/feil.xsd"/>
+      <xsd:import namespace="http://nav.no/ekstern/virkemiddelokonomi/tjenester/utbetaling/meldinger/v1" schemaLocation="meldinger/meldinger.xsd"/>
+      <xsd:element name="finnUtbetalingListe">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnUtbetalingListeRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnUtbetalingListeResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnUtbetalingListeResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnUtbetalingListebrukerIkkeFunnet" type="feil:BrukerIkkeFunnet"/>
+      <xsd:element name="finnUtbetalingListeingenTilgangTilEnEllerFlereYtelser" type="feil:IngenTilgangTilEnEllerFlereYtelser"/>
+      <xsd:element name="finnUtbetalingListeugyldigDato" type="feil:UgyldigDato"/>
+      <xsd:element name="finnUtbetalingListeugyldigKombinasjonBrukerIdOgBrukertype" type="feil:UgyldigKombinasjonBrukerIdOgBrukertype"/>
+      <xsd:element name="finnUtbetalingListebaksystemIkkeTilgjengelig" type="feil:BaksystemIkkeTilgjengelig"/>
+      <xsd:element name="finnBrukersUtbetalteYtelser">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="request" type="meldinger:FinnBrukersUtbetalteYtelserRequest"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnBrukersUtbetalteYtelserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="response" type="meldinger:FinnBrukersUtbetalteYtelserResponse"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="finnBrukersUtbetalteYtelserbaksystemIkkeTilgjengelig" type="feil:BaksystemIkkeTilgjengelig"/>
+      <xsd:element name="finnBrukersUtbetalteYtelserbrukerIkkeFunnet" type="feil:BrukerIkkeFunnet"/>
+      <xsd:element name="finnBrukersUtbetalteYtelseringenTilgangTilEnEllerFlereYtelser" type="feil:IngenTilgangTilEnEllerFlereYtelser"/>
+      <xsd:element name="finnBrukersUtbetalteYtelserugyldigDato" type="feil:UgyldigDato"/>
+      <xsd:element name="finnBrukersUtbetalteYtelserugyldigKombinasjonBrukerIdOgBrukertype" type="feil:UgyldigKombinasjonBrukerIdOgBrukertype"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="finnBrukersUtbetalteYtelser_ingenTilgangTilEnEllerFlereYtelser">
+    <wsdl:part name="ingenTilgangTilEnEllerFlereYtelser" element="tns:finnBrukersUtbetalteYtelseringenTilgangTilEnEllerFlereYtelser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListe_ingenTilgangTilEnEllerFlereYtelser">
+    <wsdl:part name="ingenTilgangTilEnEllerFlereYtelser" element="tns:finnUtbetalingListeingenTilgangTilEnEllerFlereYtelser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListe_baksystemIkkeTilgjengelig">
+    <wsdl:part name="baksystemIkkeTilgjengelig" element="tns:finnUtbetalingListebaksystemIkkeTilgjengelig">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListe_brukerIkkeFunnet">
+    <wsdl:part name="brukerIkkeFunnet" element="tns:finnUtbetalingListebrukerIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnBrukersUtbetalteYtelser_brukerIkkeFunnet">
+    <wsdl:part name="brukerIkkeFunnet" element="tns:finnBrukersUtbetalteYtelserbrukerIkkeFunnet">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnBrukersUtbetalteYtelserResponse">
+    <wsdl:part name="parameters" element="tns:finnBrukersUtbetalteYtelserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnBrukersUtbetalteYtelser_baksystemIkkeTilgjengelig">
+    <wsdl:part name="baksystemIkkeTilgjengelig" element="tns:finnBrukersUtbetalteYtelserbaksystemIkkeTilgjengelig">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListeRequest">
+    <wsdl:part name="parameters" element="tns:finnUtbetalingListe">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListe_ugyldigKombinasjonBrukerIdOgBrukertype">
+    <wsdl:part name="ugyldigKombinasjonBrukerIdOgBrukertype" element="tns:finnUtbetalingListeugyldigKombinasjonBrukerIdOgBrukertype">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListeResponse">
+    <wsdl:part name="parameters" element="tns:finnUtbetalingListeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnBrukersUtbetalteYtelserRequest">
+    <wsdl:part name="parameters" element="tns:finnBrukersUtbetalteYtelser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnBrukersUtbetalteYtelser_ugyldigKombinasjonBrukerIdOgBrukertype">
+    <wsdl:part name="ugyldigKombinasjonBrukerIdOgBrukertype" element="tns:finnBrukersUtbetalteYtelserugyldigKombinasjonBrukerIdOgBrukertype">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnUtbetalingListe_ugyldigDato">
+    <wsdl:part name="ugyldigDato" element="tns:finnUtbetalingListeugyldigDato">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finnBrukersUtbetalteYtelser_ugyldigDato">
+    <wsdl:part name="ugyldigDato" element="tns:finnBrukersUtbetalteYtelserugyldigDato">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Utbetaling">
+    <wsdl:operation name="finnUtbetalingListe">
+<wsdl:documentation>&lt;p&gt;Operasjonen tilbyr uthenting av utbetalingsinformasjon for en fysisk person eller en organisasjon. Uthenting gjøres basert på hvem utbetalingen gjelder, altså rettighetshaveren til utbetalingen, og ikke basert på hvem som eventuelt mottar pengene (utbetalingsmottakeren). Operasjonen vil også, basert på hvem som er hjemmelshaver og hvilke tilgang de har til ytelses- og trekkinformasjon, gjøre filtrering så denne konsumenten mottar kun de data de har hjemmel til å se.&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input message="tns:finnUtbetalingListeRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnUtbetalingListeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigDato" message="tns:finnUtbetalingListe_ugyldigDato">
+    </wsdl:fault>
+      <wsdl:fault name="brukerIkkeFunnet" message="tns:finnUtbetalingListe_brukerIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigKombinasjonBrukerIdOgBrukertype" message="tns:finnUtbetalingListe_ugyldigKombinasjonBrukerIdOgBrukertype">
+    </wsdl:fault>
+      <wsdl:fault name="baksystemIkkeTilgjengelig" message="tns:finnUtbetalingListe_baksystemIkkeTilgjengelig">
+    </wsdl:fault>
+      <wsdl:fault name="ingenTilgangTilEnEllerFlereYtelser" message="tns:finnUtbetalingListe_ingenTilgangTilEnEllerFlereYtelser">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="finnBrukersUtbetalteYtelser">
+<wsdl:documentation>&lt;p&gt;Operasjonen tilbyr uthenting av ytelser det blir gjort utbetalinger på for en fysisk person eller en organisasjon. Uthenting gjøres basert på hvem utbetalingen gjelder, altså rettighetshaveren til utbetalingen, og ikke basert på hvem som eventuelt mottar pengene (utbetalingsmottakeren). Operasjonen vil også, basert på hvem som er hjemmelshaver og hvilke tilgang de har til ytelses- og trekkinformasjon, gjøre filtrering så denne konsumenten mottar kun de data de har hjemmel til å se.&lt;/p&gt;&lt;p&gt;&lt;/p&gt; </wsdl:documentation>
+      <wsdl:input message="tns:finnBrukersUtbetalteYtelserRequest">
+    </wsdl:input>
+      <wsdl:output message="tns:finnBrukersUtbetalteYtelserResponse">
+    </wsdl:output>
+      <wsdl:fault name="ugyldigDato" message="tns:finnBrukersUtbetalteYtelser_ugyldigDato">
+    </wsdl:fault>
+      <wsdl:fault name="brukerIkkeFunnet" message="tns:finnBrukersUtbetalteYtelser_brukerIkkeFunnet">
+    </wsdl:fault>
+      <wsdl:fault name="ugyldigKombinasjonBrukerIdOgBrukertype" message="tns:finnBrukersUtbetalteYtelser_ugyldigKombinasjonBrukerIdOgBrukertype">
+    </wsdl:fault>
+      <wsdl:fault name="baksystemIkkeTilgjengelig" message="tns:finnBrukersUtbetalteYtelser_baksystemIkkeTilgjengelig">
+    </wsdl:fault>
+      <wsdl:fault name="ingenTilgangTilEnEllerFlereYtelser" message="tns:finnBrukersUtbetalteYtelser_ingenTilgangTilEnEllerFlereYtelser">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
