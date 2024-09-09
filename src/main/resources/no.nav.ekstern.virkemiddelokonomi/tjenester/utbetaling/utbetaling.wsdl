@@ -11,6 +11,17 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="finnUtbetalingListeFeil">
+        <xsd:complexType>
+          <xsd:choice>
+            <xsd:element name="finnUtbetalingListebrukerIkkeFunnet" type="feil:BrukerIkkeFunnet"/>
+            <xsd:element name="finnUtbetalingListeingenTilgangTilEnEllerFlereYtelser" type="feil:IngenTilgangTilEnEllerFlereYtelser"/>
+            <xsd:element name="finnUtbetalingListeugyldigDato" type="feil:UgyldigDato"/>
+            <xsd:element name="finnUtbetalingListeugyldigKombinasjonBrukerIdOgBrukertype" type="feil:UgyldigKombinasjonBrukerIdOgBrukertype"/>
+            <xsd:element name="finnUtbetalingListebaksystemIkkeTilgjengelig" type="feil:BaksystemIkkeTilgjengelig"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="finnUtbetalingListeResponse">
         <xsd:complexType>
           <xsd:sequence>
