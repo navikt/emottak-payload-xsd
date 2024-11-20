@@ -5,7 +5,7 @@ Versjon 1.0
 2010-02-01
 -->
 <xs:schema xmlns:kith="http://www.kith.no/xmlstds" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.kith.no/xmlstds/nav/egenandel/2010-02-01" targetNamespace="http://www.kith.no/xmlstds/nav/egenandel/2010-02-01" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="../felles/kith.xsd"/>
+	<xs:import namespace="http://www.kith.no/xmlstds" schemaLocation="./kith.xsd"/>
 	<xs:element name="EgenandelForesporsel">
 		<xs:complexType>
 			<xs:choice>
