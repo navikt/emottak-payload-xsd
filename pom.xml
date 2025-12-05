@@ -7,7 +7,7 @@
 
     <artifactId>emottak-payload-xsd</artifactId>
     <name>Java representasjon av payload relaterte xsd-er brukt fra emottak</name>
-    <version>0.0.10</version>
+    <version>0.0.11</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -25,10 +25,11 @@
         <argLine>-Xms256m -Dlog.level.no.nav=WARN -Dfile.encoding=${project.build.sourceEncoding}</argLine>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <cxf.version>3.5.10</cxf.version>
-        <cxf-jaxws.version>4.0.0</cxf-jaxws.version>
-        <cxf-codegen.version>4.0.0</cxf-codegen.version>
-        <jakarta.version>4.0.0</jakarta.version>
+        <cxf.version>4.1.4</cxf.version>
+        <cxf-jaxws.version>4.1.4</cxf-jaxws.version>
+        <cxf-codegen.version>4.1.4</cxf-codegen.version>
+        <cxf-xjc.version>4.1.1</cxf-xjc.version>
+        <jakarta.version>4.0.2</jakarta.version>
     </properties>
 
     <dependencies>
@@ -118,7 +119,7 @@
             <plugin>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-xjc-plugin</artifactId>
-                <version>${cxf-codegen.version}</version>
+                <version>${cxf-xjc.version}</version>
                 <configuration>
                     <extensions>
                         <extension>org.apache.cxf.xjcplugins:cxf-xjc-dv:3.2.3</extension>
