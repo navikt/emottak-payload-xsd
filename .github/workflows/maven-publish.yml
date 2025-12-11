@@ -1,8 +1,9 @@
 name: Maven Package
 
 on:
+  workflow_dispatch:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   build:
@@ -29,3 +30,4 @@ jobs:
       run: mvn deploy -s $GITHUB_WORKSPACE/.github/.m2/settings.xml
       env:
         GITHUB_TOKEN: ${{ github.token }}
+        
