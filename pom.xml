@@ -7,7 +7,7 @@
 
     <artifactId>emottak-payload-xsd</artifactId>
     <name>Java representasjon av payload relaterte xsd-er brukt fra emottak</name>
-    <version>0.0.11</version>
+    <version>0.0.12</version>
     <packaging>jar</packaging>
 
     <distributionManagement>
@@ -146,6 +146,9 @@
                                 </xsdOption>
                                 <xsdOption>
                                     <xsd>${basedir}/src/main/resources/NAV-Pasientliste-2010-02-01.xsd</xsd>
+                                </xsdOption>
+                                <xsdOption>
+                                    <xsd>${basedir}/src/main/resources/InnrapporteringTrekk-2010-02-04.xsd</xsd>
                                 </xsdOption>
                             </xsdOptions>
                         </configuration>
