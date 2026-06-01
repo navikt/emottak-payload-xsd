@@ -150,6 +150,9 @@
                                 <xsdOption>
                                     <xsd>${basedir}/src/main/resources/InnrapporteringTrekk-2010-02-04.xsd</xsd>
                                 </xsdOption>
+                                <xsdOption>
+                                    <xsd>${basedir}/src/main/resources/Fellesformat_2.0.xsd</xsd>
+                                </xsdOption>
                             </xsdOptions>
                         </configuration>
                         <goals>
