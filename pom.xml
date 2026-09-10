@@ -25,7 +25,7 @@
         <argLine>-Xms256m -Dlog.level.no.nav=WARN -Dfile.encoding=${project.build.sourceEncoding}</argLine>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <cxf.version>4.1.4</cxf.version>
+        <cxf.version>4.2.3</cxf.version>
         <cxf-jaxws.version>4.1.4</cxf-jaxws.version>
         <cxf-codegen.version>4.1.4</cxf-codegen.version>
         <cxf-xjc.version>4.1.1</cxf-xjc.version>
