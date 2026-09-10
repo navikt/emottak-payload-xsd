@@ -26,7 +26,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <cxf.version>4.2.3</cxf.version>
-        <cxf-jaxws.version>4.1.4</cxf-jaxws.version>
+        <cxf-jaxws.version>4.2.3</cxf-jaxws.version>
         <cxf-codegen.version>4.1.4</cxf-codegen.version>
         <cxf-xjc.version>4.1.1</cxf-xjc.version>
         <jakarta.version>4.0.2</jakarta.version>
