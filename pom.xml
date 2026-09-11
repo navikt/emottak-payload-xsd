@@ -29,7 +29,7 @@
         <cxf-jaxws.version>4.2.3</cxf-jaxws.version>
         <cxf-codegen.version>4.2.3</cxf-codegen.version>
         <cxf-xjc.version>4.2.0</cxf-xjc.version>
-        <jakarta.version>4.0.2</jakarta.version>
+        <jakarta.version>4.0.3</jakarta.version>
     </properties>
 
     <dependencies>
